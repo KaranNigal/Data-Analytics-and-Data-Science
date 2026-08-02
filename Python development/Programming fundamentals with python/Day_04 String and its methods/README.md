@@ -2,7 +2,7 @@
 
 This repository contains my **Day 04** practice from my **Python Development** learning journey.  
 Today's focus was on understanding **Strings in Python**, including indexing, slicing, and commonly used string methods.
-
+Along with Home work problem, lter solved in separate file
 ---
 
 ## 📚 Topics Covered
