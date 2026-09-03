@@ -1,0 +1,29 @@
+# PACKAGE AND MODULE STRUCTURE
+#
+# pkg_practice/                 -> Main project folder
+#
+# ├── test.py                   -> A normal Python file outside the package
+#
+# └── pkg3/                     -> A Python PACKAGE
+#     │
+#     ├── __init__.py           -> Initializes the package
+#     ├── m1.py                 -> Module 1
+#     ├── m2.py                 -> Module 2
+#     ├── m3.py                 -> Module 3
+#     │
+#     └── subpackage/           -> A package inside another package
+#         └── ms.py             -> Module inside the subpackage
+#
+# MODULE:
+# A single Python (.py) file containing Python code.
+# Examples: m1.py, m2.py, m3.py
+#
+# PACKAGE:
+# A folder that organizes related Python modules together.
+# Traditionally, __init__.py is used to initialize/define a regular package.
+#
+# SUBPACKAGE:
+# A package located inside another package.
+
+pip install used to download a package in our cwd
+pip uninsatll used to delete a package from our cwd
