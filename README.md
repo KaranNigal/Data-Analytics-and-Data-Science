@@ -40,16 +40,4 @@ When you explore this repository, you will find:
 * **Unsupervised Learning**: K-Means Clustering, Hierarchical Clustering, DBSCAN, and Dimensionality Reduction (PCA)[cite: 1].
 * **Model Evaluation**: Hyperparameter tuning, Cross-Validation, ROC-AUC, and metrics optimization[cite: 1].
 
----
 
-## 📂 Repository Structure
-
-```text
-├── 01_Python_Fundamentals/         # Core Python scripts, logic building & OOPs
-├── 02_Data_Analysis_Pandas_NumPy/  # Data cleaning, manipulation & EDA notebooks
-├── 03_SQL_Database_Queries/        # SQL scripts, joins, window functions & DB setups
-├── 04_Excel_Analytic_Files/        # Advanced formulas, Pivot Tables & mini models
-├── 05_PowerBI_Dashboards/          # Power BI reports & DAX practice models
-├── 06_Tableau_Visualizations/      # Tableau workbooks & storytelling layouts
-├── 07_Statistics_and_Probability/  # Python notebooks for statistical testing & math
-└── 08_Machine_Learning_Projects/   # Supervised/Unsupervised models & pipeline implementations
