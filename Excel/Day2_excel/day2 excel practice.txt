@@ -1,0 +1,13 @@
+>> clt+t converts data to table
+
+>> select table -- convert to range >> used to convt table to data
+
+>> select table -- home -- clear formats will remove the formatting from table 
+
+>> select  table -- slicer -- select column use to slice the data , similar to group by in sql
+
+>> absolute reference -- cursor to center of cellname and then enter f4
+
+>>=LOOKUP(A4,E3:F8,F3:F8) -- lookup formula 
+
+>> =LOOKUP($A$48,$A$37:$E$44,B37:B44) -- lookup formula for full records retrieval

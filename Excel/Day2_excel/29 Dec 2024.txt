@@ -1,0 +1,86 @@
+Conditional formating -
+highlight cell rule
+top bottom rule 
+data bars
+color scale
+icon sets
+
+
+
+Excel Function :
+
+1.agg fun - sum,min,max,count,avg
+
+
+2.text - upper,lower,proper,concat,trim,len and many more
+
+=UPPER(A3:A22)
+=LOWER(A3:A22)
+
+=CONCAT(A3,B3)
+=CONCAT(A3," ",B3)
+=CONCAT(A3," and ",B4)
+=CONCAT("The total Stats of ",A4," are ",C4,".")
+
+==TRIM(A29:A48)
+=LEFT(B29:B48,3)
+
+
+3.date & time functions -
+
+Functions are :TODAY ,NOW,DAY,MONTH,YEAR,DATE
+
+Examples :
+=TODAY()
+=NOW()
+=DAY(C7)
+=MONTH(C7)
+=YEAR(C7)
+
+
+add/substract day 
+=B15+C16
+=B15-3
+
+add/substract month,year
+
+=EDATE(B21,4)  
+=EDATE(B21,-3)
+=EDATE(B28,120)
+=EDATE(B28,12*10)
+=EDATE(B28,12*-10)
+=EDATE(B28,-120)
+
+Time functions:
+
+current time - ctrl  shift :
+=HOUR(C36)
+=MINUTE(C36)
+=SECOND(C36)
+=TIME(C37,C38,C39)
+
+
+=DATEVALUE(A44)
+=TIMEVALUE(A49)
+
+-------------------------------------------------------------------
+
+Table in Excel - collection of row and col depending on selection of data.
+its fixed table.
+
+
+Create Table  (Shortcuts)		
+Filter,Sort		
+Design Tab		
+Table Style Options	
+rename table ,resize table 	
+silcer for table 	
+remove duplicates --> Go to table design 
+convert to range 	
+	
+
+
+
+
+
+
