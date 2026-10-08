@@ -633,9 +633,3 @@ Contains the complete SQL practice code, including:
 Contains the documentation and concepts covered during Day 7.
 
 ---
-
-# 🚀 Progress
-
-**Day 7 of SQL Practice**
-
-> Learning SQL through daily hands-on practice and pushing my progress to GitHub.
