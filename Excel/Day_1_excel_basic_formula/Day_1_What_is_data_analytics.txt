@@ -1,0 +1,141 @@
+
+What is DA (Data Analytics)?
+
+What is DA (Data Analytics)?
+Data Analytics = Process of understanding data to make better business decisions.
+- Get insights from data
+- Understand patterns (hidden & visible)
+- Identify whether business is running smoothly
+- Measure profit, loss, growth, trends
+- Help companies make strategic decisions
+------------------------------------------------------------------
+
+Domain Knowledge in Data Analytics
+Domain knowledge means understanding the industry for which you are analyzing data.
+
+It includes:
+- Business process
+- Customer behavior
+- Industry rules
+- Key metrics (KPIs)
+- Common problems in that domain
+
+Who decides KPIs?
+- KPIs are always decided by the Business Team:
+  ✔ Business Analyst (BA)
+  ✔ Product Manager (PM)
+  ✔ Client / Stakeholder
+  ✔ Management / Domain Experts
+- A Data Analyst does NOT set KPIs.
+- A Data Analyst only understands KPIs and performs analysis based on them.
+
+Examples of Domains:
+1. E-Commerce: Sales, Profit, Delivery time, Reviews
+2. Finance/Banking: Loan default, Credit score, EMI performance
+3. Healthcare: Patient waiting time, Treatment success, Medicine stock
+4. Telecom: Call drop rate, Churn rate, Internet usage
+5. Entertainment/OTT: Watch time, Audience age, Subscription type
+
+“Yes, a little bit of domain knowledge is important in data analysis.
+You don’t need deep or expert-level domain knowledge — just enough to understand which business the data belongs to and what the basic context is.”
+----------------------------------------------------
+
+Process of Data Analytics 
+============================
+
+1. Problem Understanding
+   - The client/business team provides the business problem.
+   - Product Managers, Business Analysts, or Stakeholders explain what needs to be solved.
+   - Example: “Is 2024 sales better than 2023?”
+
+2. Data Collection (Mostly Automated)
+   - Data is collected automatically by systems (websites, apps, ERP, POS)
+   - Data Engineers maintain data pipelines
+   - Data Analyst only accesses/downloads existing data
+
+Data Analyst Work (Actual Responsibilities)
+A Data Analyst does NOT collect raw data.  
+Data is already stored in company systems.
+
+A Data Analyst usually accesses data from:
+✔ Excel Reports  
+✔ SQL Databases  
+✔ CSV Exports  
+✔ ERP Exports (SAP, Tally, Zoho)  
+✔ Google Cloud / AWS S3  
+✔ Data Warehouses (Snowflake, BigQuery, Redshift)  
+✔ API Reports  
+
+Simple Explanation:  
+“Data Analyst does not create data; they analyze the data that already exists in the company.”
+
+3. Data Cleaning
+   - Remove duplicates
+   - Handle missing values
+   - Fix incorrect formats
+   - Standardize data
+
+4. Data Analysis (Basic Exploration)
+   - Sorting: arranging data (e.g., highest to lowest)
+   - Filtering: showing only required rows
+   - Grouping: combining similar data
+   - Pivot: summarizing large data quickly
+   - Trends: checking upward/downward movement
+   - Summary Tables: totals, averages, counts
+
+5. Data Visualization
+   - Creating charts, graphs, dashboards using Power BI, Tableau, Excel
+
+6. Insights & Decision Making
+   - Converting charts into business insights
+   - Recommending business actions
+
+------------------------------------------------------------
+Course Modules
+1. Excel
+2. MySQL
+3. BI Tools – Power BI, Tableau
+4. Python Programming
+6. Mini Projects – 2
+
+Real-Time Use Cases
+---------------------------------------------------------
+1. Online Shopping Data (Amazon)
+Questions:
+- Is this year’s sale target achieved?
+- Is this year better than 2023?
+
+Parameters:
+- Sales (City, State, Region)
+- Profit (Category, Subcategory, Brand)
+- Age-wise customers
+- Ratings & Reviews
+- Delivery quality
+--------------------------------------------
+2. Netflix Data
+Parameters:
+- Mode of payment
+- Age-wise audience
+- Country/Area preferences
+- Popularity (Bollywood, Hollywood, Sports, Kids, Web-series)
+- Languages (English, Marathi, Hindi, etc.)
+
+
+----------------------------------------------------------------------
+
+Student Assignment
+3. Tourism Data Analysis
+Parameters:
+- Country/State-wise visitors
+- Seasonal demand
+- Tourist spending behavior
+- Travel mode
+- Age group
+- Hotel preferences
+- Ratings & reviews
+
+
+
+
+
+

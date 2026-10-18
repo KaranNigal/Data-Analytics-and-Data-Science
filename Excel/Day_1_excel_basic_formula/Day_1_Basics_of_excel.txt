@@ -1,0 +1,69 @@
+Excel Basics – Day 2
+
+Creating a Workbook
+
+A workbook is a collection of worksheets.
+Each sheet contains rows and columns.
+A single workbook can have multiple sheets.
+Excel files use the .xlsx extension.
+Excel Interface & Basic Operations
+Cut, Copy, Paste
+Undo, Redo
+
+Formatting options: text color, background color, font size, borders, styles
+Alignment: left, center, right, wrap text, merge & center
+Sort and Filter
+Insert & Delete rows, columns, and cells
+
+Excel Formulas
+
+Formulas perform calculations.
+Examples:
+=C19 + D19
+=C19 * D20
+
+Excel Functions
+---------------------
+
+Excel includes more than 168 functions.
+
+Aggregate Functions: SUM, AVERAGE, MIN, MAX, COUNT, COUNTA
+Example:
+=SUM(C14:E14)
+
+Difference between AVERAGE and AVERAGEA:
+
+AVERAGE ignores text.
+AVERAGEA treats text as 0.
+
+Conditional Formatting
+-------------------------
+
+Highlight Cell Rules
+Top/Bottom Rules
+Data Bars
+Color Scales
+Icon Sets
+
+Text Functions
+------------------
+
+UPPER → =UPPER(A3)
+
+LOWER → =LOWER(A3)
+
+PROPER → =PROPER(A3)
+
+CONCAT → =CONCAT(A3, B3)
+
+=CONCAT(A3, " ", B3)
+
+=CONCAT(A3, " and ", B4)
+
+=CONCAT("The total stats of ", A4, " are ", C4, ".")
+
+TRIM → =TRIM(A29)
+
+LEN → =LEN(A1)
+
+
