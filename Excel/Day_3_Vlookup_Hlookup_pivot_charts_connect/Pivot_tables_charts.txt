@@ -1,0 +1,37 @@
+Pivot table in Excel 
+
+- this is felxible table - easily add or remove col ,rows
+- add filter is very easy
+- use to create summarize information 
+- above summarize info can be utilized for further processing such 
+ as visualization ,calcualtion etc....
+
+
+
+Charts in Excel - is used for visualization.
+can create full report using different charts.
+like bar,column,pie,line ,combo chart and many more....
+every chart can format as par need such as changing title,x title,y title,text size ,legend,and many more...
+ 
+
+Power Query Editor tool - is used to clean data & transform data.
+this is useful tool.mostly use for data cleaning purpose.
+
+
+Basic Data Cleaning & Transform - 
+-remove null rows & cols,remove duplicate rows ,blank rows 
+-change format ,data type 
+-edit rows & cols
+-replacing the values
+
+Note :
+Tip 1: query editor dont have redo and undo optios .use cancel or click on red cross icon to cancel the changes.
+
+
+
+
+
+
+
+
+

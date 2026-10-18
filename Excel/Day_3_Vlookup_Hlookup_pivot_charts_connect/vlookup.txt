@@ -1,0 +1,51 @@
+cell references in Excel-
+
+1.Relative  Reference
+
+
+2.Absolute Reference
+
+
+1.Lookup
+
+
+
+-to fetch full record.
+=LOOKUP($A$48,$A$37:$A$44,B37:B44)
+
+
+
+
+2.Vlookup - 
+
+2.1 Vlookup Rules
+1	Lookup Value should be unique in the column
+2	You can find values from left to right
+3	Lookup value should be belong to first colum of table array
+
+Examples:
+
+1.=VLOOKUP(D1,B4:D12,3,)
+2.=VLOOKUP(A15,A4:D12,4,)
+
+2.2 VLOOKUP and Data Validation
+
+VLOOKUP with Named Range
+=VLOOKUP(A26,VTable,4,)
+
+
+2.3 VLOOKUP with Approximate Match
+	
+Less than 1st Value in Lookup Column displays value as #NA	
+Lookup Value Column should be sorted in ascending order	
+Leaving 4th Argument Blank makes it as Approximate Match	
+
+=VLOOKUP(A17,B5:D10,3,)
+
+
+
+2.4 Vlookup full record with Match function
+
+=VLOOKUP($A$16,$A$6:$D$13,MATCH(B15,$A$5:$D$5,0),0)
+
+=VLOOKUP($A$18,$A$6:$D$13,MATCH(B15,$A$5:$D$5,0),0)
