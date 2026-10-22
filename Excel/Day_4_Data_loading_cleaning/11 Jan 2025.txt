@@ -1,0 +1,22 @@
+Power Query Editor :
+
+Data cleaning - remove empty line,
+remove empty col,
+remove duplicate rows,
+changing data format(data type based on the value)
+change col name (if required)
+remove errors
+apply column headings etc....
+
+---------------------------------------------------------------------
+
+
+Connecting / getting data from other sources in EXCEL
+
+1.text /  csv
+2.web
+3.database - mssql server,mysql 
+
+
+
+
