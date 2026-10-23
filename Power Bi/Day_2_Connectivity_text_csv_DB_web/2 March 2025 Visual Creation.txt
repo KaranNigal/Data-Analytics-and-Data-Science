@@ -1,0 +1,38 @@
+
+connecting power bi with mysql database 
+
+install component on machine
+1.mysql connector 8.0.30
+2.mysql odbc driver 8.1.0
+
+restart your machine after installing software 
+
+practical 1: load mysql tables into power BI
+
+--------------------------------------------------------------
+
+Power BI  Visualization : Visualizations are used to effectively present your data and are the basic building blocks of any Business Intelligence tool. Power BI contains various default data visualization components that include simple bar charts, pie charts maps, and also complex models such as waterfalls, funnels, gauges, and many other components.
+
+Practical : 
+1.use sample superstore.xlxs data and load orders sheet into 
+power BI. and create different charts/ visuals
+
+1.bar chart
+2.column chart
+3.stack column chart
+4.pie
+5.donut
+6.map
+7.filled map
+8.table 
+9.matrix
+10.line 
+11.dual line chart
+12.line and column chart
+13.cards - number,text,date
+14.slicers - text,number,date
+
+during the session we saw all chart creation.
+revise and all examples.
+
+

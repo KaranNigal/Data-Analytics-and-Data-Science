@@ -1,0 +1,53 @@
+BI Tool  -Power BI
+
+microsoft - power BI Dekstop free
+tableau - 75 par user per month
+Alteryx - $4950 par user par year
+
+BI features -
+
+1.Strong source connectivity  
+2.GUI best 
+3.real time information
+4.Data modeling support
+5.Better visualization 
+6.data cleaning & transformation 
+7.sharing dashboard ,report ,collrboration 
+
+
+Power BI Tool/framework : go to web site.
+In this tool majorly 2 thing are used desktop and services.other options are also present.
+
+-Power BI desktop
+-Power BI Pro
+-Power BI Premium
+-Power BI Mobile 
+-Power Bi Report Server -cloud based
+
+
+Power BI desktop - free 
+Power BI Premium - Desktop and services are present (paid)
+
+Power BI desktop - preparing the dashboard.In this we have 3 section 
+
+
+
+Power BI Desktop Interface :
+
+report view 
+table view
+model view
+dax view 
+
+pane - data ,visual ,format pane enabled and disabled as par need.
+
+
+Connecting diff sources in Power BI 
+
+1.load excle file into power Bi
+2.load text file 
+3.load csv file 
+4.load web page data into power Bi 
+
+
+
