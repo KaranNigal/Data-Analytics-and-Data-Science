@@ -1,0 +1,37 @@
+Power Query tool - 
+
+data cleaning 
+Transformation - Power query function 
+
+Power Query functions- can perform many operations like data cleaning ,tranformation ,date ,number funtions.
+
+1.text function in power query - many function are present which you can use by button click. will see basic one like 
+- merge column,upper,lower,proper,remove delimiter ,add suffix,prefix
+
+2.Date function - power bi -->power Query --> total 30 function are available which you can use by button click
+ 
+Date Functions are - 
+ ->Year, Quarter, Month & Day Functions
+ ->Difference between dates ,earliest,latest date
+ ->How to get Month and Day Name 
+ -> How to Extract Date and Time
+ -> calculate age based on birthdate
+ 
+3.number function - student will try -- for assignments
+
+-----------------------------------------------------------------
+
+Power query provides method to combine multiple excel files ,excel tables or csv files .those methods are
+
+1.append query : it is using for arraning data 1 below the another
+top to bottom data is appended.
+
+Practical for append query 
+
+1.append multiple csv file from 1 folder
+
+
+
+
+
+

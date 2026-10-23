@@ -1,0 +1,22 @@
+slicer formating 
+
+
+filter in power BI -
+3 types of filter :
+filter on visual 
+filter on this page
+filter on all pages 
+
+
+include exclude - used to filter out data on visual which is on report .no need change visual or recreate new visual for that
+
+inlcude - means the data which selected that will show on report
+exclude - means the data which selected excluding that other data will show 
+
+drill through - move 1 page to another or next page
+
+hierarchies creation with matrix 
+
+drill up and down using matrix hierarchies 
+
+
