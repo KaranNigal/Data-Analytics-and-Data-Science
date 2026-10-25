@@ -1,0 +1,26 @@
+Power Query Tool/editor - its excel tool .as it as copied into Power Bi tool because its microsoft tool.
+the way using in excel same way you can use it in Power BI with extra features.It performs many operations such as :
+
+1.data cleaning 
+2.data transformation 
+3.Power query function 
+4.creating data model ,relationship - append query ,merge query 
+
+
+1.Data cleaning - it helps you to clean unclean data
+
+use case 1: perform data cleaning use sales2017_raw.csv file for this.
+
+1.blank row 
+2.blank cols
+2.lots of NA values
+3.duplicate row /record /cols
+4.check columns data type /format
+5.replace values
+
+Assignment student
+use case 2: perform data cleaning on employee.xls file 
+
+
+
+

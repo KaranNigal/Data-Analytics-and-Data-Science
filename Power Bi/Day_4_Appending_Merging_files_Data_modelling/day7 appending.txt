@@ -1,0 +1,14 @@
+Power Query continued....
+
+1.Append query - arrange data 1 below the another
+1.append multiple csv files from folder
+2.append multiple excel sheet from 1 excel file.
+3.append multiple excel sheet with different columns.
+4.append multiple excel file from folder
+  = Excel.Workbook([Content])
+5.append different source file (excel ,csv)
+
+
+2.Merge Query - join the table/sheets 
+ 
+1.merge excel table into power bi

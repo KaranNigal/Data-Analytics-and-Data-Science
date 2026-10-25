@@ -1,0 +1,22 @@
+Merge Query continued....
+
+2.merge 2 different excel table
+3.merge 2 different sources
+4.merge data with multiple matching columns
+
+
+
+Creating / establish relation ship between multiple files 
+
+-types of relation ship 
+one to many ,many to many ,many to one
+
+Data Model View - after creating relationship data model gets created and  can see in Model view .
+
+Assignment :
+1.create data model for product and sales
+2.create data model for student and courses file
+3.create data model for for AmazingMartEU2 file
+
+4.solve data cleaning  refer power query 1 folder from assignment which is shared on drive.
+ 
