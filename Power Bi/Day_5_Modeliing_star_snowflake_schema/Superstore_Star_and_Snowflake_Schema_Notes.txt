@@ -1,0 +1,884 @@
+DATA MODELING – STAR SCHEMA & SNOWFLAKE SCHEMA
+Using Sample Superstore Dataset
+============================================================
+
+1. INTRODUCTION TO DATA MODELING
+-------------------------------
+
+Data Modeling means organizing data into tables and defining relationships between those tables so that data can be easily stored, analyzed, and reported.
+
+In Power BI, proper data modeling is very important because it helps us:
+
+• Build accurate reports and dashboards
+• Create correct relationships between tables
+• Improve report performance
+• Avoid duplicate data
+• Write easier DAX calculations
+• Analyze business data from different perspectives
+
+A common Data Warehouse / BI model contains two major types of tables:
+
+1. Fact Table
+2. Dimension Table
+
+
+2. SAMPLE SUPERSTORE DATASET
+----------------------------
+
+For understanding Data Modeling, we will use the Sample Superstore dataset.
+
+The Superstore dataset contains business information related to:
+
+• Orders
+• Customers
+• Products
+• Sales
+• Profit
+• Quantity
+• Discounts
+• Regions
+• Categories
+• Sub-Categories
+• Dates
+
+Important columns commonly available in the Superstore Orders data include:
+
+Order ID
+Order Date
+Ship Date
+Ship Mode
+Customer ID
+Customer Name
+Segment
+Country
+City
+State
+Postal Code
+Region
+Product ID
+Category
+Sub-Category
+Product Name
+Sales
+Quantity
+Discount
+Profit
+
+If we directly use one large Orders table, it may contain repeated information.
+
+Example:
+
+Customer Name, Segment, City, State and Region may be repeated for every order made by the same customer.
+
+Similarly:
+
+Category and Sub-Category may be repeated for every product transaction.
+
+This is where Data Modeling becomes useful.
+
+
+3. FACT TABLE
+-------------
+
+A Fact Table stores measurable business events or transactions.
+
+It generally contains:
+
+• Numeric/measurable values
+• Foreign Keys connected to dimension tables
+• One row for each business event/transaction
+
+In Superstore, an order/transaction-level table can be treated as the main Fact table.
+
+Example:
+
+FACT_SALES
+
+Order ID
+Order Date Key
+Customer ID
+Product ID
+Location Key
+Sales
+Quantity
+Discount
+Profit
+
+Important Measures:
+
+Sales      → How much revenue was generated?
+Quantity   → How many products were sold?
+Discount   → What discount was given?
+Profit     → How much profit was generated?
+
+Example:
+
+Order ID    Customer ID    Product ID    Sales    Quantity    Profit
+CA-001      CUST-101       PROD-001      250      2           50
+CA-002      CUST-102       PROD-005      500      4           80
+CA-003      CUST-101       PROD-002      150      1           30
+
+Here:
+
+Sales, Quantity, Discount and Profit are FACTS.
+
+Customer ID and Product ID are keys used to connect the fact table with dimensions.
+
+
+4. DIMENSION TABLE
+------------------
+
+A Dimension Table contains descriptive information used to analyze the facts.
+
+Dimensions answer questions such as:
+
+• Who?
+• What?
+• Where?
+• When?
+• Which category?
+• Which region?
+
+Examples from Superstore:
+
+DIM_CUSTOMER
+
+Customer ID
+Customer Name
+Segment
+
+DIM_PRODUCT
+
+Product ID
+Product Name
+Sub-Category
+Category
+
+DIM_DATE
+
+Date Key
+Date
+Day
+Month
+Month Name
+Quarter
+Year
+
+DIM_LOCATION
+
+Location Key
+Country
+State
+City
+Postal Code
+Region
+
+Dimension tables are mainly used for filtering, grouping and slicing data.
+
+
+5. STAR SCHEMA
+--------------
+
+Star Schema is a Data Warehouse schema in which:
+
+• One central Fact Table is present
+• Multiple Dimension Tables are directly connected to the Fact Table
+• Dimensions are generally denormalized
+• The structure looks like a STAR
+
+Basic Structure:
+
+                    DIM_DATE
+                       |
+                       |
+DIM_CUSTOMER ---- FACT_SALES ---- DIM_PRODUCT
+                       |
+                       |
+                 DIM_LOCATION
+
+
+6. STAR SCHEMA USING SUPERSTORE
+-------------------------------
+
+We can create the following model:
+
+                 DIM_DATE
+                    |
+                    |
+DIM_CUSTOMER -- FACT_SALES -- DIM_PRODUCT
+                    |
+                    |
+              DIM_LOCATION
+
+
+FACT_SALES
+
+• Order ID
+• Date Key
+• Customer ID
+• Product ID
+• Location Key
+• Sales
+• Quantity
+• Discount
+• Profit
+
+
+DIM_CUSTOMER
+
+• Customer ID
+• Customer Name
+• Segment
+
+
+DIM_PRODUCT
+
+• Product ID
+• Product Name
+• Sub-Category
+• Category
+
+
+DIM_DATE
+
+• Date Key
+• Date
+• Day
+• Month
+• Quarter
+• Year
+
+
+DIM_LOCATION
+
+• Location Key
+• Country
+• State
+• City
+• Postal Code
+• Region
+
+
+7. SUPERSTORE EXAMPLE – STAR SCHEMA
+-----------------------------------
+
+Suppose we want to answer:
+
+"How much Sales and Profit did we generate for Technology products in the West region in 2025?"
+
+The Fact table contains:
+
+Sales
+Profit
+Product ID
+Customer ID
+Location Key
+Date Key
+
+The Dimension tables provide the descriptive information:
+
+DIM_PRODUCT → Category = Technology
+DIM_LOCATION → Region = West
+DIM_DATE → Year = 2025
+
+Power BI filters the dimensions and retrieves the related records from FACT_SALES.
+
+This is the main advantage of a Star Schema.
+
+
+8. WHY IS IT CALLED STAR SCHEMA?
+--------------------------------
+
+Because the Fact Table is placed in the center and Dimension Tables are connected around it.
+
+The visual structure looks similar to a star.
+
+                    Date
+                     |
+                     |
+Customer -------- Sales -------- Product
+                     |
+                     |
+                  Location
+
+
+9. ADVANTAGES OF STAR SCHEMA
+-----------------------------
+
+1. Simple to understand
+2. Easy to create relationships
+3. Easy for beginners
+4. Better for reporting and BI
+5. DAX calculations are easier
+6. Fewer joins are required
+7. Good query/report performance
+8. Easy filtering and slicing
+9. Works very well with Power BI
+10. Easy to maintain for reporting purposes
+
+
+10. DISADVANTAGES OF STAR SCHEMA
+--------------------------------
+
+1. Some dimension data may be repeated
+2. More storage can sometimes be required
+3. Dimensions are less normalized
+4. Data redundancy may exist
+
+
+11. SNOWFLAKE SCHEMA
+-------------------
+
+Snowflake Schema is an extension of the Star Schema.
+
+In a Snowflake Schema:
+
+• Fact Table remains in the center
+• Dimensions are normalized
+• A dimension can be divided into multiple related tables
+• Dimension tables can have their own related dimension tables
+• The structure becomes more complex
+
+Example:
+
+FACT_SALES
+    |
+    +---- DIM_PRODUCT
+              |
+              +---- DIM_SUBCATEGORY
+                         |
+                         +---- DIM_CATEGORY
+
+
+12. SNOWFLAKE SCHEMA USING SUPERSTORE
+-------------------------------------
+
+Instead of keeping all product information in one Product Dimension, we can split it.
+
+FACT_SALES
+
+• Order ID
+• Date Key
+• Customer ID
+• Product ID
+• Location Key
+• Sales
+• Quantity
+• Discount
+• Profit
+
+
+DIM_PRODUCT
+
+• Product ID
+• Product Name
+• Sub-Category ID
+
+
+DIM_SUBCATEGORY
+
+• Sub-Category ID
+• Sub-Category
+• Category ID
+
+
+DIM_CATEGORY
+
+• Category ID
+• Category
+
+
+Similarly, Customer and Location information can also be normalized.
+
+Example:
+
+DIM_CUSTOMER
+    |
+    +---- DIM_SEGMENT
+
+DIM_LOCATION
+    |
+    +---- DIM_CITY
+             |
+             +---- DIM_STATE
+                     |
+                     +---- DIM_REGION
+
+
+13. SUPERSTORE – SNOWFLAKE EXAMPLE
+----------------------------------
+
+Suppose the Product hierarchy is:
+
+Category
+   ↓
+Sub-Category
+   ↓
+Product
+
+Example:
+
+Technology
+   ↓
+Phones
+   ↓
+Apple iPhone
+
+Instead of storing:
+
+Product ID | Product Name | Sub-Category | Category
+
+in one table, we can create separate tables:
+
+DIM_PRODUCT
+Product ID
+Product Name
+Sub-Category ID
+
+DIM_SUBCATEGORY
+Sub-Category ID
+Sub-Category
+Category ID
+
+DIM_CATEGORY
+Category ID
+Category
+
+This reduces repeated descriptive information.
+
+For example, "Technology" does not need to be repeatedly stored for every product transaction.
+
+
+14. STAR SCHEMA vs SNOWFLAKE SCHEMA
+-----------------------------------
+
+STAR SCHEMA:
+
+FACT_SALES
+   |
+   +-- DIM_PRODUCT
+   +-- DIM_CUSTOMER
+   +-- DIM_DATE
+   +-- DIM_LOCATION
+
+SNOWFLAKE SCHEMA:
+
+FACT_SALES
+   |
+   +-- DIM_PRODUCT
+          |
+          +-- DIM_SUBCATEGORY
+                  |
+                  +-- DIM_CATEGORY
+
+The main difference is that Star Schema keeps dimensions relatively denormalized, while Snowflake Schema normalizes dimensions into multiple related tables.
+
+
+15. IMPORTANT COMPARISON
+------------------------
+
+Feature                 STAR SCHEMA          SNOWFLAKE SCHEMA
+------------------------------------------------------------
+
+Structure                Simple              Complex
+Dimensions               Denormalized        Normalized
+Number of tables         Fewer               More
+Relationships            Fewer               More
+Data redundancy          More                Less
+Storage                  May be higher       May be lower
+Query complexity         Lower               Higher
+Maintenance              Easier              More complex
+Performance              Generally faster    Can require more joins
+Power BI usability       Very good           More complex
+Reporting                Excellent           Good
+Beginner friendly        Yes                 Less suitable
+
+
+16. NORMALIZATION CONCEPT
+-------------------------
+
+Normalization means organizing data into multiple related tables to reduce duplicate data and improve data consistency.
+
+Example:
+
+Without normalization:
+
+Product ID | Product Name | Sub-Category | Category
+-----------------------------------------------------
+P001       | iPhone       | Phones       | Technology
+P002       | Galaxy       | Phones       | Technology
+P003       | Laptop       | Machines     | Technology
+
+"Technology" is repeated.
+
+With normalization:
+
+DIM_CATEGORY
+
+Category ID | Category
+----------------------
+C01         | Technology
+
+DIM_SUBCATEGORY
+
+SubCat ID | Sub-Category | Category ID
+---------------------------------------
+S01       | Phones       | C01
+S02       | Machines     | C01
+
+DIM_PRODUCT
+
+Product ID | Product Name | SubCat ID
+--------------------------------------
+P001       | iPhone       | S01
+P002       | Galaxy       | S01
+P003       | Laptop       | S02
+
+Now the category information is stored separately and referenced using keys.
+
+
+17. DENORMALIZATION CONCEPT
+---------------------------
+
+Denormalization means keeping related descriptive information together to simplify querying and reporting.
+
+Star Schema generally uses denormalized dimensions.
+
+Example:
+
+DIM_PRODUCT
+
+Product ID
+Product Name
+Sub-Category
+Category
+
+This is easier for Power BI users because fewer relationships are required.
+
+
+18. FACT TABLE vs DIMENSION TABLE
+---------------------------------
+
+FACT TABLE
+
+• Stores transactions/events
+• Contains numeric measures
+• Usually large
+• Contains foreign keys
+• Example: Sales, Quantity, Profit
+
+DIMENSION TABLE
+
+• Stores descriptive information
+• Used for filtering/grouping
+• Usually smaller than fact table
+• Contains primary keys
+• Example: Customer, Product, Date, Location
+
+
+19. PRIMARY KEY AND FOREIGN KEY
+------------------------------
+
+Primary Key:
+
+A column that uniquely identifies each row in a table.
+
+Example:
+
+DIM_PRODUCT
+
+Product ID = Primary Key
+
+Foreign Key:
+
+A column used to connect one table with another table.
+
+Example:
+
+FACT_SALES
+
+Product ID = Foreign Key
+
+Relationship:
+
+DIM_PRODUCT[Product ID]
+          1
+          |
+          |
+          *
+FACT_SALES[Product ID]
+
+This is a One-to-Many relationship.
+
+One product can appear in many sales transactions.
+
+
+20. POWER BI RELATIONSHIP IN STAR SCHEMA
+----------------------------------------
+
+Typical relationships:
+
+DIM_CUSTOMER[Customer ID]
+          1
+          |
+          *
+FACT_SALES[Customer ID]
+
+
+DIM_PRODUCT[Product ID]
+          1
+          |
+          *
+FACT_SALES[Product ID]
+
+
+DIM_DATE[Date Key]
+          1
+          |
+          *
+FACT_SALES[Date Key]
+
+
+DIM_LOCATION[Location Key]
+          1
+          |
+          *
+FACT_SALES[Location Key]
+
+Best practice:
+
+Dimension → Fact
+
+One-to-Many (1:*)
+
+Single-direction filtering is generally preferred for a clean model unless there is a specific reason to use another configuration.
+
+
+21. WHY NOT USE ONE LARGE SUPERSTORE TABLE?
+-------------------------------------------
+
+The original Superstore Orders table is convenient for learning, but in a larger BI solution, using one very large table can create problems.
+
+Example:
+
+The same customer information may appear in hundreds of transactions.
+
+Customer Name
+Customer City
+Customer State
+Customer Segment
+
+may be repeated again and again.
+
+Similarly:
+
+Product Name
+Category
+Sub-Category
+
+may be repeated across many sales records.
+
+Potential problems:
+
+• Data redundancy
+• Larger model size
+• More difficult maintenance
+• More chances of inconsistent descriptive data
+• Less clean data model
+
+
+22. STAR SCHEMA – PRACTICAL POWER BI MODEL
+------------------------------------------
+
+For a Power BI project, a clean model can be designed as:
+
+             DIM_DATE
+                 |
+                 |
+DIM_CUSTOMER -- FACT_SALES -- DIM_PRODUCT
+                 |
+                 |
+            DIM_LOCATION
+
+
+FACT_SALES contains:
+
+Order ID
+Date Key
+Customer ID
+Product ID
+Location Key
+Sales
+Quantity
+Discount
+Profit
+
+Dimensions contain descriptive attributes.
+
+Then we can easily create visuals such as:
+
+• Sales by Category
+• Profit by Region
+• Sales by Customer Segment
+• Monthly Sales Trend
+• Quantity by Product
+• Profit by State
+• Sales by Ship Mode
+
+
+23. EXAMPLE REPORT QUESTIONS
+----------------------------
+
+Using the Star Schema, we can answer:
+
+Q1. What is total Sales?
+
+Answer:
+SUM(FACT_SALES[Sales])
+
+Q2. What is total Profit?
+
+Answer:
+SUM(FACT_SALES[Profit])
+
+Q3. What is Sales by Category?
+
+Use:
+DIM_PRODUCT[Category]
++
+FACT_SALES[Sales]
+
+Q4. What is Profit by Region?
+
+Use:
+DIM_LOCATION[Region]
++
+FACT_SALES[Profit]
+
+Q5. What is monthly Sales?
+
+Use:
+DIM_DATE[Month]
++
+FACT_SALES[Sales]
+
+Q6. What is Sales by Customer Segment?
+
+Use:
+DIM_CUSTOMER[Segment]
++
+FACT_SALES[Sales]
+
+
+24. WHICH SCHEMA SHOULD WE USE IN POWER BI?
+--------------------------------------------
+
+For most Power BI reporting projects, Star Schema is preferred.
+
+Reasons:
+
+• Simple model
+• Easy relationships
+• Easy DAX
+• Better report development experience
+• Easy filtering
+• Good performance
+• Easy for business users to understand
+
+Snowflake Schema can be useful when:
+
+• Dimensions are very large
+• Hierarchies need normalization
+• Reducing redundancy is important
+• Existing enterprise data warehouse already follows a snowflake design
+
+
+25. INTERVIEW QUESTIONS
+-----------------------
+
+Q1. What is a Fact Table?
+
+A Fact Table stores measurable business events or transactions such as Sales, Quantity and Profit.
+
+Q2. What is a Dimension Table?
+
+A Dimension Table stores descriptive information such as Customer, Product, Date and Region.
+
+Q3. What is Star Schema?
+
+A Star Schema has one central Fact Table connected directly to multiple Dimension Tables.
+
+Q4. What is Snowflake Schema?
+
+A Snowflake Schema is a normalized version of a Star Schema where dimensions are divided into multiple related tables.
+
+Q5. Which is simpler: Star or Snowflake?
+
+Star Schema.
+
+Q6. Which schema has more tables?
+
+Snowflake Schema.
+
+Q7. Which schema has more normalized dimensions?
+
+Snowflake Schema.
+
+Q8. Which schema is generally preferred in Power BI?
+
+Star Schema is generally preferred for reporting and semantic models.
+
+Q9. Why is Star Schema called Star Schema?
+
+Because the Fact Table is at the center and Dimension Tables surround it like a star.
+
+Q10. What is the relationship between a Dimension and Fact table?
+
+Usually One-to-Many (1:*), where one dimension record can be associated with many fact records.
+
+
+26. FINAL SUMMARY
+-----------------
+
+Remember these four points:
+
+1. FACT TABLE = What happened?
+   Example: Sales, Quantity, Profit
+
+2. DIMENSION TABLE = Who/What/Where/When?
+   Example: Customer, Product, Location, Date
+
+3. STAR SCHEMA = Simple + Direct Dimensions
+   Fact → Dimensions
+
+4. SNOWFLAKE SCHEMA = Normalized Dimensions
+   Fact → Dimension → Sub-Dimension
+
+For Sample Superstore:
+
+STAR:
+
+DIM_DATE
+    |
+DIM_CUSTOMER -- FACT_SALES -- DIM_PRODUCT
+    |
+DIM_LOCATION
+
+SNOWFLAKE:
+
+FACT_SALES
+    |
+DIM_PRODUCT
+    |
+DIM_SUBCATEGORY
+    |
+DIM_CATEGORY
+
+Therefore:
+
+STAR SCHEMA → Simple, fewer tables, easier reporting, preferred for most Power BI models.
+
+SNOWFLAKE SCHEMA → More normalized, more tables, more relationships, useful when normalization and reduced redundancy are important.
+
+
+END OF NOTES
